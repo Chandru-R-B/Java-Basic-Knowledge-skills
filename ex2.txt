@@ -32,11 +32,6 @@ Explanation : {2,3 } are the children of {1}.
 {4,5,6 } are the children of {2,3}, thus the siblings of x= 5 are {4,6}
 
 
-
-
-coding****
-
-
 import java.util.*;
  
 public class Main
