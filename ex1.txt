@@ -15,9 +15,6 @@ Output: -1
 Explanation:  The returned integer does not fit in a 32-bit integer
 
 
-Coding*****
-
-
 import java.util.*;
 public class Main
 {
