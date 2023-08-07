@@ -1,3 +1,5 @@
+Write a program to check whether it is a palindrome using a method in java
+
 import java.io.*;
 import java.util.*;
 class Palindrome{
