@@ -1,0 +1,52 @@
+To find the Passkey for the room based on the given input
+Rules for the key:
+The thousand place should be the smallest across all digit in ones place
+The hundred place should be the largest across all digit in tens place
+The tens place should be the smallest across all digit in hundreds place
+The ones place should be the largest across all digit in thousands place
+
+input format:
+input1 : 6752
+input2 : 3278
+input3 : 8429
+input4 : 1837
+
+output format:
+2728
+
+import java.io.*;
+import java.util.*;
+
+class PassKey
+{
+public static void FindKey(int n1,int n2, int n3, int n4)
+{
+	int thousands,hundreds,tens,ones;
+	int Smallestones= Math.min(Math.min(n1%10,n2%10),Math.min(n3%10,n4%10));
+	int LargestTens = Math.max(Math.max((((n1%1000)%100)/10),(((n2%1000)%100)/10)),Math.max(((n3%1000)%100)/10,((n4%1000)%100)/10));
+	int SmallestHundreds =Math.min(Math.min((n1%1000)/100,(n2%1000)/100),Math.min((n3%1000)/100,(n4%1000)/100));
+	int LargestThousands =Math.max(Math.max(n1/1000,n2/1000),Math.max(n3/1000,n4/1000));
+
+	thousands = Smallestones;
+	hundreds = LargestTens;
+	tens = SmallestHundreds;
+	ones = LargestThousands;
+
+	System.out.println((thousands*1000)+(hundreds*100)+(tens*10)+ones);
+}
+}
+
+class MainKey
+{
+public static void main (String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int n1,n2,n3,n4;
+	n1 = sc.nextInt();
+	n2 = sc.nextInt ();
+	n3 = sc.nextInt();
+	n4 = sc.nextInt();
+	PassKey pk = new PassKey();
+	pk.FindKey(n1,n2,n3,n4);
+}
+}
